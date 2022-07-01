@@ -1,0 +1,498 @@
+{
+    "author":"Caleb Cipra",
+    "description": "Module to interact with Clientify. Get deals with filters.",
+    "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version":"1.0",
+    "license": "MIT",
+    "homepage":"http://rocketbot.co/",
+    "linux": false,
+    "windows":true,
+    "mac":false,
+    "docker":false,
+    "name": "Clientify",
+    "dependencies": {
+        "requests": "2.26.0"
+    },
+    "title": {
+        "en": "Clientify",
+        "es": "Clientify"
+    },
+    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+    "children": [
+        {
+            "en": {
+                "title": "Connects to Clientify",
+                "description": "Connects to Clientify",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Conectar a Clientify",
+                "description": "Conectar a Clientify",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "usuario",
+                            "en": "username"
+                        },
+                        "title": {
+                            "es": "Nombre de usuario:",
+                            "en": "Username:"
+                        },
+                        "description": {
+                            "es": "Nombre de usuario de la cuenta Clientify",
+                            "en": "Clientify's username"
+                          },
+                        "id": "username",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "********",
+                            "en": "********"
+                        },
+                        "title": {
+                            "es": "Password",
+                            "en": "Password:"
+                        },
+                        "description": {
+                            "es": "Password de usuario de la cuenta Clientify",
+                            "en": "Clientify's password"
+                          },
+                        "id": "password",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado. Traera un JSON.",
+                            "en": "Variable to assign the result. It will bring a JSON."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "connectToClientify",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Get deals with filters",
+                "description": "Gets all your deals with filters",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Obtener oportunidad con filtros",
+                "description": "Obtiene oportunidad con filtros",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Rocket",
+                            "en": "Rocket"
+                        },
+                        "title": {
+                            "es": "Filtro especifico:",
+                            "en": "Specific deals filter:"
+                        },
+                        "description": {
+                            "es": "Filtro especifico de busqueda; ej: nombre de la oportunidad, nombre de la compañía, nombre de contacto, apellido de contacto",
+                            "en": "Searching specific filter; e.g.: deal's name, company name, contact name, contact last name, opportunity"
+                        },
+                        "help": {
+                            "es": "Nombre de la oportunidad, nombre de la compañía, nombre de contacto, apellido de contacto",
+                            "en": "Deal's name, company name, contact name, contact last name, opportunity"
+                        },
+                        "id": "deals_filter",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Carlos",
+                            "en": "Charles"
+                        },
+                        "title": {
+                            "es": "Nombre del propietario:",
+                            "en": "Owner's name:"
+                        },
+                        "description": {
+                            "es": "Filtro por nombre de propietario.",
+                            "en": "Owner's name filter"
+                        },
+                        "help": {
+                            "es": "Nombre del propietario de la oportunidad",
+                            "en": "Owner's name of the deal"
+                        },
+                        "id": "owner_name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Filtro mayor que:",
+                          "en": "Filter greater than:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": ">",
+                            "value": "gt"
+                          },
+                          {
+                            "title": ">=",
+                            "value": "gte"
+                          }
+                        ],
+                        "description": {
+                            "es": "Selector para usar con fecha de cierre mayor que.",
+                            "en": "Selector for greater than closed date"
+                        },
+                        "help": {
+                            "es": "Filtro mayor que",
+                            "en":  "Filter greater than"
+                        },
+                        "id": "closed_date_greater_filter",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "2021/08/23",
+                            "en": "2021/08/23"
+                        },
+                        "title": {
+                            "es": "Fecha de cierre:",
+                            "en": "Closed date:"
+                        },
+                        "description": {
+                            "es": "Fecha de cierre mayor que. Formato: yyyy/mm/dd",
+                            "en": "Closed date greater than. Format: yyyy/mm/dd"
+                        },
+                        "help": {
+                            "es": "Formato yyyy/mm/dd",
+                            "en": "Format yyyy/mm/dd"
+                        },
+                        "id": "closed_date_greater",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Filtro menor que:",
+                          "en": "Filter lesser than:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": "<",
+                            "value": "lt"
+                          },
+                          {
+                            "title": "<=",
+                            "value": "lte"
+                          }
+                        ],
+                        "description": {
+                            "es": "Selector para usar con fecha de cierre menor que.",
+                            "en": "Selector for lesser than closed date"
+                        },
+                        "help": {
+                            "es": "Filtro menor que",
+                            "en":  "Filter lesser than"
+                        },
+                        "id": "closed_date_lesser_filter",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "2021/08/23",
+                            "en": "2021/08/23"
+                        },
+                        "title": {
+                            "es": "Fecha de cierre:",
+                            "en": "Closed date:"
+                        },
+                        "description": {
+                            "es": "Fecha de cierre menor que. Formato: yyyy/mm/dd",
+                            "en": "Closed date lesser than. Format: yyyy/mm/dd"
+                        },
+                        "help": {
+                            "es": "Formato yyyy/mm/dd",
+                            "en": "Format yyyy/mm/dd"
+                        },
+                        "id": "closed_date_lesser",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Estado:",
+                          "en": "Status:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": "Open",
+                            "value": "1"
+                          },
+                          {
+                            "title": "Expired",
+                            "value": "2"
+                          },{
+                            "title": "Won",
+                            "value": "3"
+                          },{
+                            "title": "Lost",
+                            "value": "4"
+                          }
+                        ],
+                        "description": {
+                            "es": "Estado de la oportunidad. Ej: Won (ganada), Lost (perdida).",
+                            "en": "Deal's status. E.g.: Won, Lost, Open, Expired."
+                        },
+                        "help": {
+                            "es": "Estado de la venta",
+                            "en":  "Sell's status"
+                        },
+                        "id": "status_id",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Venta",
+                            "en": "Reseller"
+                        },
+                        "title": {
+                            "es": "Flujo:",
+                            "en": "Pipeline:"
+                        },
+                        "description": {
+                            "es": "Filtro de flujo de la oportunidad.",
+                            "en": "Deal's pipeline filter."
+                        },
+                        "id": "pipeline_desc",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Tipo de filtro de fecha:",
+                          "en": "Date filter:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": "Created",
+                            "value": "created"
+                          },
+                          {
+                            "title": "Modified",
+                            "value": "modified"
+                          }
+                        ],
+                        "description": {
+                            "es": "Filtro de fecha, creada o modificada.",
+                            "en": "Date's filter, created or modified."
+                        },
+                        "help": {
+                            "es": "Filtro de la fecha",
+                            "en":  "Date's filter"
+                        },
+                        "id": "date_filter",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Filtro mayor que:",
+                          "en": "Filter greater than:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": ">",
+                            "value": "[gt]"
+                          },
+                          {
+                            "title": ">=",
+                            "value": "[gte]"
+                          }
+                        ],
+                        "description": {
+                            "es": "Selector para usar con fecha de creacion o modificacion mayor que.",
+                            "en": "Selector for created date or modified date greater than."
+                        },
+                        "help": {
+                            "es": "Filtro mayor que",
+                            "en":  "Filter greater than"
+                        },
+                        "id": "greater_filter",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "2021/08/23",
+                            "en": "2021/08/23"
+                        },
+                        "title": {
+                            "es": "Fecha:",
+                            "en": "Date:"
+                        },
+                        "description": {
+                            "es": "Fecha de creacion o modificacion mayor que. Formato: yyyy/mm/dd",
+                            "en": "Created or modified date greater than. Format: yyyy/mm/dd"
+                        },
+                        "help": {
+                            "es": "Formato yyyy/mm/dd",
+                            "en": "Format yyyy/mm/dd"
+                        },
+                        "id": "date_greater",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Filtro menor que:",
+                          "en": "Filter lesser than:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Select--",
+                            "value": ""
+                          },
+                          {
+                            "title": "<",
+                            "value": "[lt]"
+                          },
+                          {
+                            "title": "<=",
+                            "value": "[lte]"
+                          }
+                        ],
+                        "description": {
+                            "es": "Selector para usar con fecha de creacion o modificacion menor que.",
+                            "en": "Selector for created date or modified date lesser than."
+                        },
+                        "help": {
+                            "es": "Filtro menor que",
+                            "en":  "Filter lesser than"
+                        },
+                        "id": "lesser_filter",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "2021/08/23",
+                            "en": "2021/08/23"
+                        },
+                        "title": {
+                            "es": "Fecha:",
+                            "en": "Date:"
+                        },
+                        "description": {
+                            "es": "Fecha de creacion o modificacion menor que. Formato: yyyy/mm/dd",
+                            "en": "Created or modified date lesser than. Format: yyyy/mm/dd"
+                        },
+                        "help": {
+                            "es": "Formato yyyy/mm/dd",
+                            "en": "Format yyyy/mm/dd"
+                        },
+                        "id": "date_lesser",
+                        "css": "col-md-3"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado. Traera un JSON.",
+                            "en": "Variable to assign the result. It will bring a JSON."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "getDealsWithQuery",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        }
+    ]
+}
