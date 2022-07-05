@@ -24,15 +24,26 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
+
+
 import os
 import sys
 
-base_path = tmp_global_obj["basepath"]
+__author__ = "Caleb Cipra"
+__modified__ = "Danilo Toro"
+__version__ = "1.1.0"
+
+
+GetParams = GetParams #type:ignore
+SetVar = SetVar #type:ignore
+base_path = tmp_global_obj["basepath"] #type:ignore
+
+
 cur_path = base_path + 'modules' + os.sep + 'Clientify' + os.sep + 'libs' + os.sep
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
-from clientifyObject import ClientifyObject
+from clientifyObject import ClientifyObject #type:ignore
 
 global clientify_I
 
@@ -40,7 +51,7 @@ module = GetParams("module")
 
 try:
 
-    if (module == "connectToClientify"):
+    if module == "connectToClientify":
 
         username = GetParams("username")
         password = GetParams("password")
@@ -114,7 +125,13 @@ try:
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, resultRead)
 
+    if module == "getDeal":
+        deal_id = GetParams("deal_id")
+        resultRead = clientify_I.getDeal(deal_id)
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, resultRead)
+
 except Exception as e:
     print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
-    PrintException()
+    PrintException() #type:ignore
     raise e
