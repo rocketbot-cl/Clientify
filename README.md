@@ -19,10 +19,15 @@ Connects to Clientify
 2. Get deals with filters  
 Gets all your deals with filters
 
+3. Get deal by ID
+Get all properties of a deal 
+
 ----
 ### OS
 
 - windows
+- Mac
+- Linux
 
 ### Dependencies
 
