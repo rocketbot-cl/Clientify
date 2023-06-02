@@ -1,10 +1,15 @@
 {
-    "author":"Caleb Cipra",
-    "description": "Module to interact with Clientify. Get deals with filters.",
+    "author":"Caleb Cipra - Nicolas Garcia",
+    "description": "Module to interact with Clientify.",
+    "description_lang": {
+        "es": "Módulo para interactuar con Clientify.",
+        "en": "Module to interact with Clientify.",
+        "pr": "Modulo para interagir com Clientify."
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.1.1",
+    "version":"2.0.0",
     "license": "MIT",
-    "homepage":"http://rocketbot.co/",
+    "homepage":"http://rocketbot.com/",
     "linux": false,
     "windows":true,
     "mac":false,
@@ -15,7 +20,8 @@
     },
     "title": {
         "en": "Clientify",
-        "es": "Clientify"
+        "es": "Clientify",
+        "pr": "Clientify"
     },
     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
     "children": [
@@ -32,6 +38,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Conectar a Clientify",
+                "description": "Conectar a Clientify",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -39,15 +51,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "usuario",
-                            "en": "username"
+                            "en": "username",
+                            "pr": "usuario"
                         },
                         "title": {
                             "es": "Nombre de usuario:",
-                            "en": "Username:"
+                            "en": "Username:",
+                            "pr": "Nome de usuário:"
                         },
                         "description": {
                             "es": "Nombre de usuario de la cuenta Clientify",
-                            "en": "Clientify's username"
+                            "en": "Clientify's username",
+                            "pr": "Nome de usuário da conta Clientify"
                           },
                         "id": "username",
                         "css": "col-md-6"
@@ -56,15 +71,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "********",
-                            "en": "********"
+                            "en": "********",
+                            "pr": "********"
                         },
                         "title": {
                             "es": "Password",
-                            "en": "Password:"
+                            "en": "Password:",
+                            "pr": "Senha:"
                         },
                         "description": {
                             "es": "Password de usuario de la cuenta Clientify",
-                            "en": "Clientify's password"
+                            "en": "Clientify's password",
+                            "pr": "Senha da conta Clientify"
                           },
                         "id": "password",
                         "css": "col-md-6"
@@ -73,19 +91,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable a la cual asignar el resultado. Traera un JSON.",
-                            "en": "Variable to assign the result. It will bring a JSON."
+                            "en": "Variable to assign the result. It will bring a JSON.",
+                            "pr": "Variável para atribuir o resultado. Ele trará um JSON."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -119,6 +141,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Obter oportunidade com filtros",
+                "description": "Obtém oportunidade com filtros",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -126,19 +154,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Rocket",
-                            "en": "Rocket"
+                            "en": "Rocket",
+                            "pr": "Rocket"
                         },
                         "title": {
                             "es": "Filtro especifico:",
-                            "en": "Specific deals filter:"
+                            "en": "Specific deals filter:",
+                            "pr": "Filtro específico:"
                         },
                         "description": {
                             "es": "Filtro especifico de busqueda; ej: nombre de la oportunidad, nombre de la compañía, nombre de contacto, apellido de contacto",
-                            "en": "Searching specific filter; e.g.: deal's name, company name, contact name, contact last name, opportunity"
+                            "en": "Searching specific filter; e.g.: deal's name, company name, contact name, contact last name, opportunity",
+                            "pr": "Filtro de pesquisa específico; por exemplo: nome da oportunidade, nome da empresa, nome do contato, sobrenome do contato, oportunidade"
                         },
                         "help": {
                             "es": "Nombre de la oportunidad, nombre de la compañía, nombre de contacto, apellido de contacto",
-                            "en": "Deal's name, company name, contact name, contact last name, opportunity"
+                            "en": "Deal's name, company name, contact name, contact last name, opportunity",
+                            "pr": "Nome da oportunidade, nome da empresa, nome do contato, sobrenome do contato, oportunidade"
                         },
                         "id": "deals_filter",
                         "css": "col-md-6"
@@ -147,19 +179,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Carlos",
-                            "en": "Charles"
+                            "en": "Charles",
+                            "pr": "Charles"
                         },
                         "title": {
                             "es": "Nombre del propietario:",
-                            "en": "Owner's name:"
+                            "en": "Owner's name:",
+                            "pr": "Nome do proprietário:"
                         },
                         "description": {
                             "es": "Filtro por nombre de propietario.",
-                            "en": "Owner's name filter"
+                            "en": "Owner's name filter",
+                            "pr": "Filtro de nome do proprietário"
                         },
                         "help": {
                             "es": "Nombre del propietario de la oportunidad",
-                            "en": "Owner's name of the deal"
+                            "en": "Owner's name of the deal",
+                            "pr": "Nome do proprietário da oportunidade"
                         },
                         "id": "owner_name",
                         "css": "col-md-6"
@@ -168,7 +204,8 @@
                         "type": "select",
                         "title": {
                           "es": "Filtro mayor que:",
-                          "en": "Filter greater than:"
+                          "en": "Filter greater than:",
+                            "pr": "Filtro maior que:"
                         },
                         "options": [
                           {
@@ -186,11 +223,13 @@
                         ],
                         "description": {
                             "es": "Selector para usar con fecha de cierre mayor que.",
-                            "en": "Selector for greater than closed date"
+                            "en": "Selector for greater than closed date",
+                            "pr": "Seletor para usar com data de fechamento maior que"
                         },
                         "help": {
                             "es": "Filtro mayor que",
-                            "en":  "Filter greater than"
+                            "en":  "Filter greater than",
+                            "pr": "Filtro maior que"
                         },
                         "id": "closed_date_greater_filter",
                         "css": "col-md-3"
@@ -199,19 +238,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "2021/08/23",
-                            "en": "2021/08/23"
+                            "en": "2021/08/23",
+                            "pr": "2021/08/23"
                         },
                         "title": {
                             "es": "Fecha de cierre:",
-                            "en": "Closed date:"
+                            "en": "Closed date:",
+                            "pr": "Data de fechamento:"
                         },
                         "description": {
                             "es": "Fecha de cierre mayor que. Formato: yyyy/mm/dd",
-                            "en": "Closed date greater than. Format: yyyy/mm/dd"
+                            "en": "Closed date greater than. Format: yyyy/mm/dd",
+                            "pr": "Data de fechamento maior que. Formato: yyyy/mm/dd"
                         },
                         "help": {
                             "es": "Formato yyyy/mm/dd",
-                            "en": "Format yyyy/mm/dd"
+                            "en": "Format yyyy/mm/dd",
+                            "pr": "Formato yyyy/mm/dd"
                         },
                         "id": "closed_date_greater",
                         "css": "col-md-3"
@@ -219,8 +262,9 @@
                     {
                         "type": "select",
                         "title": {
-                          "es": "Filtro menor que:",
-                          "en": "Filter lesser than:"
+                            "es": "Filtro menor que:",
+                            "en": "Filter lesser than:",
+                            "pr": "Filtro menor que:"
                         },
                         "options": [
                           {
@@ -238,11 +282,13 @@
                         ],
                         "description": {
                             "es": "Selector para usar con fecha de cierre menor que.",
-                            "en": "Selector for lesser than closed date"
+                            "en": "Selector for lesser than closed date",
+                            "pr": "Seletor para usar com data de fechamento menor que"
                         },
                         "help": {
                             "es": "Filtro menor que",
-                            "en":  "Filter lesser than"
+                            "en":  "Filter lesser than",
+                            "pr": "Filtro menor que"
                         },
                         "id": "closed_date_lesser_filter",
                         "css": "col-md-3"
@@ -251,19 +297,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "2021/08/23",
-                            "en": "2021/08/23"
+                            "en": "2021/08/23",
+                            "pr": "2021/08/23"
                         },
                         "title": {
                             "es": "Fecha de cierre:",
-                            "en": "Closed date:"
+                            "en": "Closed date:",
+                            "pr": "Data de fechamento:"
                         },
                         "description": {
                             "es": "Fecha de cierre menor que. Formato: yyyy/mm/dd",
-                            "en": "Closed date lesser than. Format: yyyy/mm/dd"
+                            "en": "Closed date lesser than. Format: yyyy/mm/dd",
+                            "pr": "Data de fechamento menor que. Formato: yyyy/mm/dd"
                         },
                         "help": {
                             "es": "Formato yyyy/mm/dd",
-                            "en": "Format yyyy/mm/dd"
+                            "en": "Format yyyy/mm/dd",
+                            "pr": "Formato yyyy/mm/dd"
                         },
                         "id": "closed_date_lesser",
                         "css": "col-md-3"
@@ -271,8 +321,9 @@
                     {
                         "type": "select",
                         "title": {
-                          "es": "Estado:",
-                          "en": "Status:"
+                            "es": "Estado:",
+                            "en": "Status:",
+                            "pr": "Estado:"
                         },
                         "options": [
                           {
@@ -296,11 +347,13 @@
                         ],
                         "description": {
                             "es": "Estado de la oportunidad. Ej: Won (ganada), Lost (perdida).",
-                            "en": "Deal's status. E.g.: Won, Lost, Open, Expired."
+                            "en": "Deal's status. E.g.: Won, Lost, Open, Expired.",
+                            "pr": "Estado da oportunidade. Ex: Won (ganhou), Lost (perdeu)."
                         },
                         "help": {
                             "es": "Estado de la venta",
-                            "en":  "Sell's status"
+                            "en":  "Sell's status",
+                            "pr": "Estado da venda"
                         },
                         "id": "status_id",
                         "css": "col-md-6"
@@ -309,15 +362,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Venta",
-                            "en": "Reseller"
+                            "en": "Reseller",
+                            "pr": "Venda"
                         },
                         "title": {
                             "es": "Flujo:",
-                            "en": "Pipeline:"
+                            "en": "Pipeline:",
+                            "pr": "Fluxo:"
                         },
                         "description": {
                             "es": "Filtro de flujo de la oportunidad.",
-                            "en": "Deal's pipeline filter."
+                            "en": "Deal's pipeline filter.",
+                            "pr": "Filtro de fluxo da oportunidade."
                         },
                         "id": "pipeline_desc",
                         "css": "col-md-6"
@@ -326,7 +382,8 @@
                         "type": "select",
                         "title": {
                           "es": "Tipo de filtro de fecha:",
-                          "en": "Date filter:"
+                          "en": "Date filter:",
+                            "pr": "Tipo de filtro de data:"
                         },
                         "options": [
                           {
@@ -344,11 +401,13 @@
                         ],
                         "description": {
                             "es": "Filtro de fecha, creada o modificada.",
-                            "en": "Date's filter, created or modified."
+                            "en": "Date's filter, created or modified.",
+                            "pr": "Filtro de data, criada ou modificada."
                         },
                         "help": {
                             "es": "Filtro de la fecha",
-                            "en":  "Date's filter"
+                            "en":  "Date's filter",
+                            "pr": "Filtro da data"
                         },
                         "id": "date_filter",
                         "css": "col-md-6"
@@ -356,8 +415,9 @@
                     {
                         "type": "select",
                         "title": {
-                          "es": "Filtro mayor que:",
-                          "en": "Filter greater than:"
+                            "es": "Filtro mayor que:",
+                            "en": "Filter greater than:",
+                            "pr": "Filtro maior que:"
                         },
                         "options": [
                           {
@@ -375,11 +435,13 @@
                         ],
                         "description": {
                             "es": "Selector para usar con fecha de creacion o modificacion mayor que.",
-                            "en": "Selector for created date or modified date greater than."
+                            "en": "Selector for created date or modified date greater than.",
+                            "pr": "Seletor para usar com data de criação ou modificação maior que."
                         },
                         "help": {
                             "es": "Filtro mayor que",
-                            "en":  "Filter greater than"
+                            "en":  "Filter greater than",
+                            "pr": "Filtro maior que"
                         },
                         "id": "greater_filter",
                         "css": "col-md-3"
@@ -388,19 +450,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "2021/08/23",
-                            "en": "2021/08/23"
+                            "en": "2021/08/23",
+                            "pr": "2021/08/23"
                         },
                         "title": {
                             "es": "Fecha:",
-                            "en": "Date:"
+                            "en": "Date:",
+                            "pr": "Data:"
                         },
                         "description": {
                             "es": "Fecha de creacion o modificacion mayor que. Formato: yyyy/mm/dd",
-                            "en": "Created or modified date greater than. Format: yyyy/mm/dd"
+                            "en": "Created or modified date greater than. Format: yyyy/mm/dd",
+                            "pr": "Data de criação ou modificação maior que. Formato: yyyy/mm/dd"
                         },
                         "help": {
                             "es": "Formato yyyy/mm/dd",
-                            "en": "Format yyyy/mm/dd"
+                            "en": "Format yyyy/mm/dd",
+                            "pr": "Formato yyyy/mm/dd"
                         },
                         "id": "date_greater",
                         "css": "col-md-3"
@@ -408,8 +474,9 @@
                     {
                         "type": "select",
                         "title": {
-                          "es": "Filtro menor que:",
-                          "en": "Filter lesser than:"
+                            "es": "Filtro menor que:",
+                            "en": "Filter lesser than:",
+                            "pr": "Filtro menor que:"
                         },
                         "options": [
                           {
@@ -427,11 +494,13 @@
                         ],
                         "description": {
                             "es": "Selector para usar con fecha de creacion o modificacion menor que.",
-                            "en": "Selector for created date or modified date lesser than."
+                            "en": "Selector for created date or modified date lesser than.",
+                            "pr": "Seletor para usar com data de criação ou modificação menor que."
                         },
                         "help": {
                             "es": "Filtro menor que",
-                            "en":  "Filter lesser than"
+                            "en":  "Filter lesser than",
+                            "pr": "Filtro menor que"
                         },
                         "id": "lesser_filter",
                         "css": "col-md-3"
@@ -440,19 +509,23 @@
                         "type": "input",
                         "placeholder": {
                             "es": "2021/08/23",
-                            "en": "2021/08/23"
+                            "en": "2021/08/23",
+                            "pr": "2021/08/23"
                         },
                         "title": {
                             "es": "Fecha:",
-                            "en": "Date:"
+                            "en": "Date:",
+                            "pr": "Data:"
                         },
                         "description": {
                             "es": "Fecha de creacion o modificacion menor que. Formato: yyyy/mm/dd",
-                            "en": "Created or modified date lesser than. Format: yyyy/mm/dd"
+                            "en": "Created or modified date lesser than. Format: yyyy/mm/dd",
+                            "pr": "Data de criação ou modificação menor que. Formato: yyyy/mm/dd"
                         },
                         "help": {
                             "es": "Formato yyyy/mm/dd",
-                            "en": "Format yyyy/mm/dd"
+                            "en": "Format yyyy/mm/dd",
+                            "pr": "Formato yyyy/mm/dd"
                         },
                         "id": "date_lesser",
                         "css": "col-md-3"
@@ -461,15 +534,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable a la cual asignar el resultado. Traera un JSON.",
-                            "en": "Variable to assign the result. It will bring a JSON."
+                            "en": "Variable to assign the result. It will bring a JSON.",
+                            "pr": "Variável à qual atribuir o resultado. Trazerá um JSON."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
@@ -507,6 +583,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Obter oportunidade por ID",
+                "description": "Obtém todas as propriedades de uma oportunidade por ID",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -514,15 +596,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "2704232",
-                            "en": "2704232"
+                            "en": "2704232",
+                            "pr": "2704232"
                         },
                         "title": {
                             "es": "Identificador de la oportunidad:",
-                            "en": "Deal ID:"
+                            "en": "Deal ID:",
+                            "pr": "ID da oportunidade:"
                         },
                         "description": {
                             "es": "Identificador de la oportunidad. Puedes obtenerla al listar las oportunidades o en la url en Clientify",
-                            "en": "Deal ID. You can get it by list deals command or in the url in Clientify"
+                            "en": "Deal ID. You can get it by list deals command or in the url in Clientify",
+                            "pr": "ID da oportunidade. Você pode obtê-lo listando os comandos de oportunidades ou na url em Clientify"
                         },
                         "id": "deal_id",
                         "css": "col-md-12"
@@ -531,15 +616,18 @@
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
                         },
                         "description": {
                             "es": "Variable a la cual asignar el resultado. Traera un JSON.",
-                            "en": "Variable to assign the result. It will bring a JSON."
+                            "en": "Variable to assign the result. It will bring a JSON.",
+                            "pr": "Variável à qual atribuir o resultado. Trazerá um JSON."
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
@@ -559,7 +647,524 @@
             "windows":true,
             "mac":false,
             "docker":false
+        },
+        {
+            "en": {
+                "title": "Get products",
+                "description": "This command allows you to get all products from Clientify",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Obtener productos",
+                "description": "Este comando te permite obtener todos los productos de Clientify",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter produtos",
+                "description": "Este comando permite obter todos os produtos do Clientify",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado.",
+                            "en": "Variable to assign the result.",
+                            "pr": "Variável à qual atribuir o resultado."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "getProducts",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Get companies by query",
+                "description": "This command allows you to get companies by name, after date of creation or after date of modification",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Obtener compañías por query",
+                "description": "Este comando te permite obtener compañías por nombre, fecha de creación o fecha de modificación",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter empresas por query",
+                "description": "Este comando permite obter empresas por nome, data de criação ou data de modificação",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de filtro",
+                            "en": "Filter type",
+                            "pr": "Tipo de filtro"
+                        },
+                        "options": [
+                            {
+                                "title": "Todos",
+                                "value": ""
+                            },
+                            {
+                                "title": "Nombre",
+                                "value": "query"
+                            },
+                            {
+                                "title": "Fecha de creación",
+                                "value": "created[gt]"
+                            },
+                            {
+                                "title": "Fecha de modificación",
+                                "value": "modified"
+                            }
+                        ],
+                        "description": {
+                            "es": "Tipo de filtro a aplicar. Si se selecciona Fecha de creación o fecha de modificación, traerá todas las compañías que hayan sido creadas o modificadas después de la fecha seleccionada.",
+                            "en": "Filter type to apply. If you select Creation date or Modification date, it will bring all companies that have been created or modified after the selected date.",
+                            "pr": "Tipo de filtro a aplicar. Se for selecionada a Data de criação ou a Data de modificação, trará todas as empresas que tenham sido criadas ou modificadas depois da data selecionada."
+                        },
+                        "id": "filter_type",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Rocketbot",
+                            "en": "Rocketbot",
+                            "pr": "Rocketbot"
+                        },
+                        "title": {
+                            "es": "Valor a buscar",
+                            "en": "Value to search",
+                            "pr": "Valor a buscar"
+                        },
+                        "description": {
+                            "es": "Valor a buscar en el filtro.",
+                            "en": "Value to search in the filter.",
+                            "pr": "Valor a buscar no filtro."
+                        },
+                        "help": {
+                            "es": "Formato de fecha a colocar: YYYY/MM/DD",
+                            "en": "Date format to place: YYYY/MM/DD",
+                            "pr": "Formato de data a colocar: YYYY/MM/DD"
+                        },
+                        "id": "filter_value",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado a variável:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado.",
+                            "en": "Variable to assign the result.",
+                            "pr": "Variável à qual atribuir o resultado."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "getCompanies",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Get contacts by query",
+                "description": "This command allows you to get contacts by name, phone or email.",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Obtener contactos por query",
+                "description": "Este comando permite obtener contactos por nombre, teléfono o email.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Obter contatos por query",
+                "description": "Este comando permite obter contatos por nome, telefone ou email.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Tipo de filtro",
+                          "en": "Filter type",
+                            "pr": "Tipo de filtro"
+                        },
+                        "options": [
+                            {
+                                "title": "Todos",
+                                "value": ""
+                            },
+                            {
+                                "title": "Nombre",
+                                "value": "query"
+                            },
+                            {
+                                "title": "Teléfono",
+                                "value": "phone"
+                            },
+                            {
+                                "title": "Email",
+                                "value": "email"
+                            }
+                        ],
+                        "description": {
+                            "es": "Tipo de filtro a aplicar. ",
+                            "en": "Filter type to apply.",
+                            "pr": "Tipo de filtro a aplicar."
+                        },
+                        "id": "filter_type",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "example@rocketbot.com",
+                            "en": "example@rocketbot.com",
+                            "pr": "example@rocketbot.com"
+                        },
+                        "title": {
+                            "es": "Valor a buscar",
+                            "en": "Value to search",
+                            "pr": "Valor a buscar"
+                        },
+                        "description": {
+                            "es": "Valor a buscar en el filtro.",
+                            "en": "Value to search in the filter.",
+                            "pr": "Valor a buscar no filtro."
+                        },
+                        "id": "filter_value",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado.",
+                            "en": "Variable to assign the result.",
+                            "pr": "Variável à qual atribuir o resultado."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "getContacts",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Create deal",
+                "description": "This command allows you to create a deal.",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Crear oportunidad",
+                "description": "Este comando permite crear una oportunidad.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Criar oportunidade",
+                "description": "Este comando permite criar uma oportunidade.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "venta",
+                            "en": "sell",
+                            "pr": "venda"
+                        },
+                        "title": {
+                            "es": "Nombre de la oportunidad",
+                            "en": "Deal name",
+                            "pr": "Nome da oportunidade"
+                        },
+                        "description": {
+                            "es": "Nombre de la oportunidad a crear.",
+                            "en": "Name of the deal to create.",
+                            "pr": "Nome da oportunidade a criar."
+                        },
+                        "id": "deal_name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "1500",
+                            "en": "1500",
+                            "pr": "1500"
+                        },
+                        "title": {
+                            "es": "Monto de la oportunidad",
+                            "en": "Deal amount",
+                            "pr": "Valor da oportunidade"
+                        },
+                        "description": {
+                            "es": "Monto de la oportunidad a crear.",
+                            "en": "Amount of the deal to create.",
+                            "pr": "Valor da oportunidade a criar."
+                        },
+                        "id": "deal_amount",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "39562459",
+                            "en": "39562459",
+                            "pr": "39562459"
+                        },
+                        "title": {
+                            "es": "ID de contacto",
+                            "en": "Contact ID",
+                            "pr": "ID do contato"
+                        },
+                        "description": {
+                            "es": "ID del contacto al cual asignar la oportunidad.",
+                            "en": "ID of the contact to assign the deal.",
+                            "pr": "ID do contato ao qual atribuir a oportunidade."
+                        },
+                        "help": {
+                            "es": "Puedes obtener el ID del contacto con el comando 'Obtener contactos por query'",
+                            "en": "You can get the contact ID with the command 'Get contacts by query'",
+                            "pr": "Você pode obter o ID do contato com o comando 'Obter contatos por query'"
+                        },
+                        "id": "contact_id",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "39562459",
+                            "en": "39562459",
+                            "pr": "39562459"
+                        },
+                        "title": {
+                            "es": "ID de compañia",
+                            "en": "Company ID",
+                            "pr": "ID da companhia"
+                        },
+                        "description": {
+                            "es": "ID de la compañia a la cual asignar la oportunidad.",
+                            "en": "ID of the company to assign the deal.",
+                            "pr": "ID da companhia à qual atribuir a oportunidade."
+                        },
+                        "help": {
+                            "es": "Puedes obtener el ID de la compañia con el comando 'Obtener compañias por query'",
+                            "en": "You can get the company ID with the command 'Get companies by query'",
+                            "pr": "Você pode obter o ID da companhia com o comando 'Obter companhias por query'"
+                        },
+                        "id": "company_id",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "2023-03-20",
+                            "en": "2023-03-20",
+                            "pr": "2023-03-20"
+                        },
+                        "title": {
+                            "es": "Fecha de cierre",
+                            "en": "Close date",
+                            "pr": "Data de fechamento"
+                        },
+                        "description": {
+                            "es": "Fecha de cierre de la oportunidad.",
+                            "en": "Close date of the deal.",
+                            "pr": "Data de fechamento da oportunidade."
+                        },
+                        "id": "close_date",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "[{\"product_id\":\"4048412\",\"quantity\":1}, {\"product_id\":\"4048413\",\"quantity\":2}]",
+                            "en": "[{\"product_id\":\"4048412\",\"quantity\":1}, {\"product_id\":\"4048413\",\"quantity\":2}]",
+                            "pr": "[{\"product_id\":\"4048412\",\"quantity\":1}, {\"product_id\":\"4048413\",\"quantity\":2}]"
+                        },
+                        "title": {
+                            "es": "Productos",
+                            "en": "Products",
+                            "pr": "Produtos"
+                        },
+                        "description": {
+                            "es": "Lista de productos de la oportunidad.",
+                            "en": "List of products of the deal.",
+                            "pr": "Lista de produtos da oportunidade."
+                        },
+                        "help": {
+                            "es": "Ejemplo: [{\"product\":\"{id_producto}\",\"quantity\":1}, {\"product\":\"{id_producto}\",\"quantity\":2}]",
+                            "en": "Example: [{\"product\":\"{id_product}\",\"quantity\":1}, {\"product\":\"{id_product}\",\"quantity\":2}]",
+                            "pr": "Exemplo: [{\"product\":\"{id_produto}\",\"quantity\":1}, {\"product\":\"{id_produto}\",\"quantity\":2}]"
+                        },
+                        "id": "products",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "#TODO",
+                            "en": "#TODO",
+                            "pr": "#TODO"
+                        },
+                        "title": {
+                            "es": "Custom fields",
+                            "en": "Custom fields",
+                            "pr": "Custom fields"
+                        },
+                        "description": {
+                            "es": "Lista de campos personalizados de la oportunidad.",
+                            "en": "List of custom fields of the deal.",
+                            "pr": "Lista de campos personalizados da oportunidade."
+                        },
+                        "id": "custom_fields",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable",
+                            "pr": "Variável"
+                        },
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Variable a la cual asignar el resultado.",
+                            "en": "Variable to assign the result.",
+                            "pr": "Variável à qual atribuir o resultado."
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
+                        },
+                        "remove_vars" : true,
+                        "id": "whereToStore",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkMiPjxwYXRoIGQ9Im0yNjMuOTYxIDUxMmMxODguNzA2IDAgMjE1LjUzLTE3MC41MDEgMjE4Ljc3NC0xNzUuODE0bC0xMjMuNzUtMzcuNzY0Yy00LjMwMSA5LjA4MS03LjEyNCAxMDIuNDY2LTk2LjAwNiAxMDIuNDY2LTY4LjYxMyAwLTEwMy40MDMtNDkuNzAyLTEwMy40MDMtMTQ3Ljc0NCAwLTk0LjI0OCAzNS40NDktMTQyLjAzMSAxMDUuMzgxLTE0Mi4wMzEgODMuMDM3IDAgODguNDA1IDc3LjE4IDkwLjQ4MyA4MC44NDVsMTI2LjQwMS0yOS4wNzdjLTMuMjU5LTQuOTc1LTI3LjU3NS0xNjIuODgxLTIxMS45NjItMTYyLjg4MS0xNDguNDE4IDAtMjQwLjYxNSAxMDAuMjg3LTI0MC42MTUgMjYwLjExNiAwIDE1MC4wNTkgOTQuMzIxIDI1MS44ODQgMjM0LjY5NyAyNTEuODg0eiIvPjwvZz48L3N2Zz4=",
+            "module": "createDeal",
+            "module_name": "Clientify",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows":true,
+            "mac":false,
+            "docker":false
         }
-
     ]
 }
