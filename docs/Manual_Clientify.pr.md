@@ -87,5 +87,5 @@ Este comando permite criar uma oportunidade.
 |ID da companhia|ID da companhia à qual atribuir a oportunidade.|39562459|
 |Data de fechamento|Data de fechamento da oportunidade.|2023-03-20|
 |Produtos|Lista de produtos da oportunidade.|[{"product_id":"4048412","quantity":1}, {"product_id":"4048413","quantity":2}]|
-|Custom fields|Lista de campos personalizados da oportunidade.|#TODO|
+|Custom fields|Lista de campos personalizados da oportunidade.|[{"field": "nome_campo","value": "valor_campo"}, {"field": "nome_campo","value": "valor_campo"}]|
 |Atribuir resultado à variável|Variável à qual atribuir o resultado.|Variável|

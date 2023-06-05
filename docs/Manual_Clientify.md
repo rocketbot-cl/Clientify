@@ -87,5 +87,5 @@ This command allows you to create a deal.
 |Company ID|ID of the company to assign the deal.|39562459|
 |Close date|Close date of the deal.|2023-03-20|
 |Products|List of products of the deal.|[{"product_id":"4048412","quantity":1}, {"product_id":"4048413","quantity":2}]|
-|Custom fields|List of custom fields of the deal.|#TODO|
+|Custom fields|List of custom fields of the deal.|[{"field": "field_name","value": "field_value"}, {"field": "field_name","value": "field_value"}]|
 |Assign result to variable|Variable to assign the result.|Variable|

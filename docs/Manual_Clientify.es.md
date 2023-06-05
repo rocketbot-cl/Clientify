@@ -87,5 +87,5 @@ Este comando permite crear una oportunidad.
 |ID de compañia|ID de la compañia a la cual asignar la oportunidad.|39562459|
 |Fecha de cierre|Fecha de cierre de la oportunidad.|2023-03-20|
 |Productos|Lista de productos de la oportunidad.|[{"product_id":"4048412","quantity":1}, {"product_id":"4048413","quantity":2}]|
-|Custom fields|Lista de campos personalizados de la oportunidad.|#TODO|
+|Custom fields|Lista de campos personalizados de la oportunidad.|[{"field": "nombre_campo","value": "valor_campo"}, {"field": "nombre_campo","value": "valor_campo"}]|
 |Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
