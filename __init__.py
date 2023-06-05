@@ -24,15 +24,27 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
+
+
 import os
 import sys
+import traceback
 
-base_path = tmp_global_obj["basepath"]
+__author__ = "Caleb Cipra"
+__modified__ = "Danilo Toro"
+__version__ = "1.1.0"
+
+
+GetParams = GetParams #type:ignore
+SetVar = SetVar #type:ignore
+base_path = tmp_global_obj["basepath"] #type:ignore
+
+
 cur_path = base_path + 'modules' + os.sep + 'Clientify' + os.sep + 'libs' + os.sep
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
-from clientifyObject import ClientifyObject
+from clientifyObject import ClientifyObject #type:ignore
 
 global clientify_I
 
@@ -40,7 +52,7 @@ module = GetParams("module")
 
 try:
 
-    if (module == "connectToClientify"):
+    if module == "connectToClientify":
 
         username = GetParams("username")
         password = GetParams("password")
@@ -114,7 +126,77 @@ try:
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, resultRead)
 
+    if module == "getDeal":
+        deal_id = GetParams("deal_id")
+        resultRead = clientify_I.getDeal(deal_id, True)
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, resultRead)
+        
+    if module == "getCompanies":
+        whereToStore = GetParams("whereToStore")
+        filter_type = GetParams("filter_type")
+        filter_value = GetParams("filter_value")
+        
+        try:
+            result = clientify_I.getCompanies(filter_type, filter_value)
+            SetVar(whereToStore, result)
+        except Exception as e:
+            PrintException() #type:ignore
+            raise e
+        
+    if module == "getContacts":
+        filter_type = GetParams("filter_type")
+        filter_value = GetParams("filter_value")
+        whereToStore = GetParams("whereToStore")
+        
+        try:
+            result = clientify_I.getContacts(filter_type, filter_value)
+            SetVar(whereToStore, result)
+        except Exception as e:
+            PrintException()
+            raise e
+        
+    if module == "createDeal":
+        deal_name = GetParams("deal_name") if GetParams("deal_name") else ""
+        deal_amount = GetParams("deal_amount") if GetParams("deal_amount") else ""
+        contact_id = GetParams("contact_id") if GetParams("contact_id") else ""
+        company_id = GetParams("company_id") if GetParams("company_id") else ""
+        close_date = GetParams("close_date") if GetParams("close_date") else ""
+        products = eval(GetParams("products")) if GetParams("products") else []
+        custom_fields = eval(GetParams("custom_fields")) if GetParams("custom_fields") else []
+
+        data = {
+            "name" : deal_name,
+            "amount" : deal_amount,
+            "contact": f"https://api.clientify.net/v1/contacts/{contact_id}/",
+            "company": f"https://api.clientify.net/v1/companies/{company_id}/",
+            "expected_closed_date": close_date,
+            "custom_fields": custom_fields,
+            "products": products,
+        }
+
+        try:
+            resultCreate = clientify_I.createDeal(data)
+            whereToStore = GetParams("whereToStore")
+            SetVar(whereToStore, resultCreate)
+        except Exception as e:
+            traceback.print_exc()
+            raise e
+    
+    if module == "getProducts":
+        whereToStore = GetParams("whereToStore")
+        resultRead = clientify_I.getProducts()
+        SetVar(whereToStore, resultRead)
+        
+    if module == "getCustomFields":
+        whereToStore = GetParams("whereToStore")
+        resultRead = clientify_I.getCustomFields()
+        SetVar(whereToStore, resultRead)
+        
+    
+
 except Exception as e:
+    traceback.print_exc()
     print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
-    PrintException()
+    PrintException() #type:ignore
     raise e
