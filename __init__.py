@@ -29,6 +29,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 import os
 import sys
 import traceback
+import json
 
 __author__ = "Caleb Cipra"
 __modified__ = "Danilo Toro"
@@ -171,8 +172,8 @@ try:
             "contact": f"https://api.clientify.net/v1/contacts/{contact_id}/",
             "company": f"https://api.clientify.net/v1/companies/{company_id}/",
             "expected_closed_date": close_date,
-            "custom_fields": custom_fields,
             "products": products,
+            "custom_fields": custom_fields
         }
 
         try:

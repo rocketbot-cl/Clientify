@@ -140,7 +140,7 @@ class ClientifyObject:
         """Get custom fields."""
         headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
         payload = ""
-        r = requests.get(f"https://api.clientify.net/v1/custom-fields?order_by=-content_type", headers=headers, data=payload)
+        r = requests.get(f"https://api.clientify.net/v1/custom-fields", headers=headers, data=payload)
         r = r.json()
         return r
     
