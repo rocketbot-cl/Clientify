@@ -1,8 +1,8 @@
 """Clientify client."""
 
 __author__ = "Caleb Cipra"
-__modified__ = "Danilo Toro"
-__version__ = "1.1.0"
+__modified__ = "Danilo Toro, Nicolas Garcia"
+__version__ = "2.0.0"
 import requests
 import json
 
@@ -55,7 +55,7 @@ class ClientifyObject:
         """Get deal products."""
         headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
         payload = ""
-        r = requests.get(f"https://api.clientify.net/v1/products", headers=headers, data=payload)
+        r = requests.get(f"https://api.clientify.net/v1/products/", headers=headers, data=payload)
         r = r.json()
         return r["results"]
         
@@ -126,6 +126,52 @@ class ClientifyObject:
             a = {}
         
         return r
+    
+    
+    def createDeal(self, data):
+        """Create deal."""
+        headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
+        payload = json.dumps(data)
+        r = requests.post("https://api.clientify.net/v1/deals/", headers=headers, data=payload)
+        r = r.json()
+        return r
+        
+    def getCustomFields(self):
+        """Get custom fields."""
+        headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
+        payload = ""
+        r = requests.get(f"https://api.clientify.net/v1/custom-fields", headers=headers, data=payload)
+        r = r.json()
+        return r
+    
+    def dealPipelineStages(self):
+        """Get deal pipeline stages."""
+        headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
+        data = {
+            "content_type": "deal"
+        }
+        payload = json.dumps(data)
+        r = requests.get("https://api.clientify.net/v1/deals/pipelines/stages", headers=headers, data=payload)
+        r = r.json()
+        return r
+
+    def getCompanies(self, filter_type, filter_value):
+        """Get companies."""
+        headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
+        payload = ""
+        url = f"https://api.clientify.net/v1/companies/?{filter_type}={filter_value}"
+        r = requests.get(url, headers=headers, data=payload)
+        r = r.json()
+        return r["results"]
+    
+    def getContacts(self, filter_type, filter_value):
+        """Get contacts."""
+        headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
+        payload = ""
+        r = requests.get(f"https://api.clientify.net/v1/contacts/?{filter_type}={filter_value}", headers=headers, data=payload)
+        r = r.json()
+        return r["results"]
+    
 
 if __name__ == "__main__":
     pass

@@ -28,6 +28,8 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 import os
 import sys
+import traceback
+import json
 
 __author__ = "Caleb Cipra"
 __modified__ = "Danilo Toro"
@@ -130,8 +132,72 @@ try:
         resultRead = clientify_I.getDeal(deal_id, True)
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, resultRead)
+        
+    if module == "getCompanies":
+        whereToStore = GetParams("whereToStore")
+        filter_type = GetParams("filter_type")
+        filter_value = GetParams("filter_value")
+        
+        try:
+            result = clientify_I.getCompanies(filter_type, filter_value)
+            SetVar(whereToStore, result)
+        except Exception as e:
+            PrintException() #type:ignore
+            raise e
+        
+    if module == "getContacts":
+        filter_type = GetParams("filter_type")
+        filter_value = GetParams("filter_value")
+        whereToStore = GetParams("whereToStore")
+        
+        try:
+            result = clientify_I.getContacts(filter_type, filter_value)
+            SetVar(whereToStore, result)
+        except Exception as e:
+            PrintException()
+            raise e
+        
+    if module == "createDeal":
+        deal_name = GetParams("deal_name") if GetParams("deal_name") else ""
+        deal_amount = GetParams("deal_amount") if GetParams("deal_amount") else ""
+        contact_id = GetParams("contact_id") if GetParams("contact_id") else ""
+        company_id = GetParams("company_id") if GetParams("company_id") else ""
+        close_date = GetParams("close_date") if GetParams("close_date") else ""
+        products = eval(GetParams("products")) if GetParams("products") else []
+        custom_fields = eval(GetParams("custom_fields")) if GetParams("custom_fields") else []
+
+        data = {
+            "name" : deal_name,
+            "amount" : deal_amount,
+            "contact": f"https://api.clientify.net/v1/contacts/{contact_id}/",
+            "company": f"https://api.clientify.net/v1/companies/{company_id}/",
+            "expected_closed_date": close_date,
+            "products": products,
+            "custom_fields": custom_fields
+        }
+
+        try:
+            resultCreate = clientify_I.createDeal(data)
+            whereToStore = GetParams("whereToStore")
+            SetVar(whereToStore, resultCreate)
+        except Exception as e:
+            traceback.print_exc()
+            raise e
+    
+    if module == "getProducts":
+        whereToStore = GetParams("whereToStore")
+        resultRead = clientify_I.getProducts()
+        SetVar(whereToStore, resultRead)
+        
+    if module == "getCustomFields":
+        whereToStore = GetParams("whereToStore")
+        resultRead = clientify_I.getCustomFields()
+        SetVar(whereToStore, resultRead)
+        
+    
 
 except Exception as e:
+    traceback.print_exc()
     print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
     PrintException() #type:ignore
     raise e
