@@ -129,7 +129,7 @@ try:
 
     if module == "getDeal":
         deal_id = GetParams("deal_id")
-        resultRead = clientify_I.getDeal(deal_id, True)
+        resultRead = clientify_I.getDeal(deal_id=deal_id, get_products=True)
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, resultRead)
         
