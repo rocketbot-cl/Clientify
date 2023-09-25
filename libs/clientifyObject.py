@@ -28,7 +28,6 @@ class ClientifyObject:
         r = eval(r.content.decode())
         try:
             self.token = r["token"]
-            print("token: ", self.token)
         except:
             self.token = ""
 
