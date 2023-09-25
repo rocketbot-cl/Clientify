@@ -28,6 +28,7 @@ class ClientifyObject:
         r = eval(r.content.decode())
         try:
             self.token = r["token"]
+            print("token: ", self.token)
         except:
             self.token = ""
 
@@ -47,7 +48,10 @@ class ClientifyObject:
         # print(response.text)
         result = response.json()
         if get_products:
+            tmp_products = result["products"]
             result["products"] = list(filter(lambda x: x["id"] in [product["product_id"] for product in result["products"]],self.getProducts()))
+            if len(result["products"]) == 0:
+                result["products"] = tmp_products
             
         return result
 
