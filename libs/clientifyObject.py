@@ -44,15 +44,24 @@ class ClientifyObject:
         headers = {"Authorization" : f"Token {self.token}", "Content-Type" : "application/json"}
         payload = ""
         response = requests.get(f"https://api.clientify.net/v1/deals/{deal_id}", headers=headers, data=payload)
-        # print(response.text)
+        #print(response.text)
         result = response.json()
-        if get_products:
-            tmp_products = result["products"]
-            result["products"] = list(filter(lambda x: x["id"] in [product["product_id"] for product in result["products"]],self.getProducts()))
-            if len(result["products"]) == 0:
+                    
+        if get_products: 
+            tmp_products = result["products"] #este devuelve cantidad (GetDeal nativo)
+            # result2 Retorna de GetProducts los que tengan el mismo ID (pero no tiene cantidad)
+            result2= list(filter(lambda x: x["id"] in [product["product_id"] for product in result["products"]],self.getProducts()))
+            # Creando un diccionario para mapear IDs y cantidades de result para agregar en result 2
+            cantidades_por_id = {producto["product_id"]: producto["quantity"] for producto in result["products"]}
+            for producto in result2:
+                producto["quantity"] = cantidades_por_id[producto["id"]]
+
+            result["products"] = result2
+            if len(result2) == 0:
                 result["products"] = tmp_products
             
         return result
+    
 
     def getProducts(self):
         """Get deal products."""

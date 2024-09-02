@@ -132,7 +132,8 @@ try:
         resultRead = clientify_I.getDeal(deal_id=deal_id, get_products=True)
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, resultRead)
-        
+
+
     if module == "getCompanies":
         whereToStore = GetParams("whereToStore")
         filter_type = GetParams("filter_type")
