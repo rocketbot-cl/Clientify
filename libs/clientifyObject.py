@@ -46,7 +46,7 @@ class ClientifyObject:
         response = requests.get(f"https://api.clientify.net/v1/deals/{deal_id}", headers=headers, data=payload)
         #print(response.text)
         result = response.json()
-                    
+           
         if get_products: 
             tmp_products = result["products"] #este devuelve cantidad (GetDeal nativo)
             # result2 Retorna de GetProducts los que tengan el mismo ID (pero no tiene cantidad)

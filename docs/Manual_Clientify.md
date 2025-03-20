@@ -1,91 +1,96 @@
+
+
+
+
 # Clientify
   
-Module to interact with Clientify.  
+Módulo para interactuar con Clientify.  
 
 *Read this in other languages: [English](Manual_Clientify.md), [Português](Manual_Clientify.pr.md), [Español](Manual_Clientify.es.md)*
   
 ![banner](imgs/Banner_Clientify.png)
-## How to install this module
+## Como instalar este módulo
   
-To install the module in Rocketbot Studio, it can be done in two ways:
-1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
+1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
 
 
-## Description of the commands
+## Descripción de los comandos
 
-### Connects to Clientify
+### Conectar a Clientify
   
-Connects to Clientify
-|Parameters|Description|example|
+Conectar a Clientify
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Username|Clientify's username|username|
-|Password|Clientify's password|********|
-|Assign result to variable|Variable to assign the result. It will bring a JSON.|Variable|
+|Nombre de usuario|Nombre de usuario de la cuenta Clientify|usuario|
+|Password|Password de usuario de la cuenta Clientify|********|
+|Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
 
-### Get deals with filters
+### Obtener oportunidad con filtros
   
-Gets all your deals with filters
-|Parameters|Description|example|
+Obtiene oportunidad con filtros
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Specific deals filter|Searching specific filter; e.g. deal's name, company name, contact name, contact last name, opportunity|Rocket|
-|Owner's name|Owner's name filter|Charles|
-|Filter greater than|Selector for greater than closed date||
-|Closed date|Closed date greater than. Format yyyy/mm/dd|2021/08/23|
-|Filter lesser than|Selector for lesser than closed date||
-|Closed date|Closed date lesser than. Format yyyy/mm/dd|2021/08/23|
-|Status|Deal's status. E.g. Won, Lost, Open, Expired.||
-|Pipeline|Deal's pipeline filter.|Reseller|
-|Date filter|Date's filter, created or modified.||
-|Filter greater than|Selector for created date or modified date greater than.||
-|Date|Created or modified date greater than. Format yyyy/mm/dd|2021/08/23|
-|Filter lesser than|Selector for created date or modified date lesser than.||
-|Date|Created or modified date lesser than. Format yyyy/mm/dd|2021/08/23|
-|Assign result to variable|Variable to assign the result. It will bring a JSON.|Variable|
+|Filtro especifico|Filtro especifico de busqueda; ej nombre de la oportunidad, nombre de la compañía, nombre de contacto, apellido de contacto|Rocket|
+|Nombre del propietario|Filtro por nombre de propietario.|Carlos|
+|Filtro mayor que|Selector para usar con fecha de cierre mayor que.||
+|Fecha de cierre|Fecha de cierre mayor que. Formato yyyy/mm/dd|2021/08/23|
+|Filtro menor que|Selector para usar con fecha de cierre menor que.||
+|Fecha de cierre|Fecha de cierre menor que. Formato yyyy/mm/dd|2021/08/23|
+|Estado|Estado de la oportunidad. Ej Won (ganada), Lost (perdida).||
+|Flujo|Filtro de flujo de la oportunidad.|Venta|
+|Tipo de filtro de fecha|Filtro de fecha, creada o modificada.||
+|Filtro mayor que|Selector para usar con fecha de creacion o modificacion mayor que.||
+|Fecha|Fecha de creacion o modificacion mayor que. Formato yyyy/mm/dd|2021/08/23|
+|Filtro menor que|Selector para usar con fecha de creacion o modificacion menor que.||
+|Fecha|Fecha de creacion o modificacion menor que. Formato yyyy/mm/dd|2021/08/23|
+|Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
 
-### Get deal by ID
+### Obtener oportunidad por ID
   
-Gets all propertys of a deal by ID
-|Parameters|Description|example|
+Obtiene todas las propiedades de una oportunidad por ID
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Deal ID|Deal ID. You can get it by list deals command or in the url in Clientify|2704232|
-|Assign result to variable|Variable to assign the result. It will bring a JSON.|Variable|
+|Identificador de la oportunidad|Identificador de la oportunidad. Puedes obtenerla al listar las oportunidades o en la url en Clientify|2704232|
+|Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
+|Solo informacion del Deals|Si esta casilla esta marcada, solo traera la informacion del deal|True|
 
-### Get products
+### Obtener productos
   
-This command allows you to get all products from Clientify
-|Parameters|Description|example|
+Este comando te permite obtener todos los productos de Clientify
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Assign result to variable|Variable to assign the result.|Variable|
+|Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
-### Get companies by query
+### Obtener compañías por query
   
-This command allows you to get companies by name, after date of creation or after date of modification
-|Parameters|Description|example|
+Este comando te permite obtener compañías por nombre, fecha de creación o fecha de modificación
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Filter type|Filter type to apply. If you select Creation date or Modification date, it will bring all companies that have been created or modified after the selected date.||
-|Value to search|Value to search in the filter.|Rocketbot|
-|Assign result to variable|Variable to assign the result.|Variable|
+|Tipo de filtro|Tipo de filtro a aplicar. Si se selecciona Fecha de creación o fecha de modificación, traerá todas las compañías que hayan sido creadas o modificadas después de la fecha seleccionada.||
+|Valor a buscar|Valor a buscar en el filtro.|Rocketbot|
+|Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
-### Get contacts by query
+### Obtener contactos por query
   
-This command allows you to get contacts by name, phone or email.
-|Parameters|Description|example|
+Este comando permite obtener contactos por nombre, teléfono o email.
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Filter type|Filter type to apply.||
-|Value to search|Value to search in the filter.|example@rocketbot.com|
-|Assign result to variable|Variable to assign the result.|Variable|
+|Tipo de filtro|Tipo de filtro a aplicar. ||
+|Valor a buscar|Valor a buscar en el filtro.|example@rocketbot.com|
+|Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
-### Create deal
+### Crear oportunidad
   
-This command allows you to create a deal.
-|Parameters|Description|example|
+Este comando permite crear una oportunidad.
+|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Deal name|Name of the deal to create.|sell|
-|Deal amount|Amount of the deal to create.|1500|
-|Contact ID|ID of the contact to assign the deal.|39562459|
-|Company ID|ID of the company to assign the deal.|39562459|
-|Close date|Close date of the deal.|2023-03-20|
-|Products|List of products of the deal.|[{"product_id":"4048412","quantity":1}, {"product_id":"4048413","quantity":2}]|
-|Custom fields|List of custom fields of the deal.|[{"field": "field_name","value": "field_value"}, {"field": "field_name","value": "field_value"}]|
-|Assign result to variable|Variable to assign the result.|Variable|
+|Nombre de la oportunidad|Nombre de la oportunidad a crear.|venta|
+|Monto de la oportunidad|Monto de la oportunidad a crear.|1500|
+|ID de contacto|ID del contacto al cual asignar la oportunidad.|39562459|
+|ID de compañia|ID de la compañia a la cual asignar la oportunidad.|39562459|
+|Fecha de cierre|Fecha de cierre de la oportunidad.|2023-03-20|
+|Productos|Lista de productos de la oportunidad.|[{"product_id":"4048412","quantity":1}, {"product_id":"4048413","quantity":2}]|
+|Custom fields|Lista de campos personalizados de la oportunidad.|[{"field": "nombre_campo","value": "valor_campo"}, {"field": "nombre_campo","value": "valor_campo"}]|
+|Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|

@@ -1,3 +1,7 @@
+
+
+
+
 # Clientify
   
 Modulo para interagir com Clientify.  
@@ -50,6 +54,7 @@ Obtém todas as propriedades de uma oportunidade por ID
 | --- | --- | --- |
 |ID da oportunidade|ID da oportunidade. Você pode obtê-lo listando os comandos de oportunidades ou na url em Clientify|2704232|
 |Atribuir resultado à variável|Variável à qual atribuir o resultado. Trazerá um JSON.|Variável|
+|Só informações dos Deals|Se esta caixa estiver marcada, trará apenas as informações do Deal.|True|
 
 ### Obter produtos
   
