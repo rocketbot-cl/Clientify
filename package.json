@@ -7,7 +7,7 @@
         "pr": "Modulo para interagir com Clientify."
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"2.0.5",
+    "version":"2.1.5",
     "license": "MIT",
     "homepage":"http://rocketbot.com/",
     "linux": false,
@@ -693,6 +693,26 @@
                     {
                         "type": "input",
                         "placeholder": {
+                            "es": "100",
+                            "en": "100",
+                            "pr": "100"
+                        },
+                        "title": {
+                            "es": "Cantidad máxima de resultados:",
+                            "en": "Maximum number of results:",
+                            "pr": "Número máximo de resultados:"
+                        },
+                        "description": {
+                            "es": "Cantidad máxima de resultados. Por defecto trae 100 productos.",
+                            "en": "Maximum number of results. Defaults to 100 products.",
+                            "pr": "Número máximo de resultados. Por padrão traz 100 produtos."
+                        },
+                        "id": "max_results",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
                             "es": "Variable",
                             "en": "Variable",
                             "pr": "Variável"
@@ -814,6 +834,26 @@
                     {
                         "type": "input",
                         "placeholder": {
+                            "es": "100",
+                            "en": "100",
+                            "pr": "100"
+                        },
+                        "title": {
+                            "es": "Cantidad máxima de resultados:",
+                            "en": "Maximum number of results:",
+                            "pr": "Número máximo de resultados:"
+                        },
+                        "description": {
+                            "es": "Cantidad máxima de resultados. Por defecto trae 100 companías.",
+                            "en": "Maximum number of results. Defaults to 100 companies.",
+                            "pr": "Número máximo de resultados. Por padrão traz 100 empresas."
+                        },
+                        "id": "max_results",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
                             "es": "Variable",
                             "en": "Variable",
                             "pr": "Variável"
@@ -925,6 +965,26 @@
                             "pr": "Valor a buscar no filtro."
                         },
                         "id": "filter_value",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "100",
+                            "en": "100",
+                            "pr": "100"
+                        },
+                        "title": {
+                            "es": "Cantidad máxima de resultados:",
+                            "en": "Maximum number of results:",
+                            "pr": "Número máximo de resultados:"
+                        },
+                        "description": {
+                            "es": "Cantidad máxima de resultados. Por defecto trae 100 companías.",
+                            "en": "Maximum number of results. Defaults to 100 companies.",
+                            "pr": "Número máximo de resultados. Por padrão traz 100 empresas."
+                        },
+                        "id": "max_results",
                         "css": "col-md-6"
                     },
                     {
