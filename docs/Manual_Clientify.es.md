@@ -1,21 +1,25 @@
+
+
+
+
 # Clientify
-  
-Módulo para interactuar con Clientify.  
+
+Módulo para interactuar con Clientify.
 
 *Read this in other languages: [English](Manual_Clientify.md), [Português](Manual_Clientify.pr.md), [Español](Manual_Clientify.es.md)*
-  
+
 ![banner](imgs/Banner_Clientify.png)
 ## Como instalar este módulo
-  
+
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
-2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.
 
 
 ## Descripción de los comandos
 
 ### Conectar a Clientify
-  
+
 Conectar a Clientify
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -24,7 +28,7 @@ Conectar a Clientify
 |Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
 
 ### Obtener oportunidad con filtros
-  
+
 Obtiene oportunidad con filtros
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
@@ -44,40 +48,44 @@ Obtiene oportunidad con filtros
 |Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
 
 ### Obtener oportunidad por ID
-  
+
 Obtiene todas las propiedades de una oportunidad por ID
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Identificador de la oportunidad|Identificador de la oportunidad. Puedes obtenerla al listar las oportunidades o en la url en Clientify|2704232|
 |Asignar resultado a variable|Variable a la cual asignar el resultado. Traera un JSON.|Variable|
+|Solo informacion del Deals|Si esta casilla esta marcada, solo traera la informacion del deal|True|
 
 ### Obtener productos
-  
+
 Este comando te permite obtener todos los productos de Clientify
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
+|Cantidad máxima de resultados|Cantidad máxima de resultados. Por defecto trae 100 productos.|100|
 |Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
 ### Obtener compañías por query
-  
+
 Este comando te permite obtener compañías por nombre, fecha de creación o fecha de modificación
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Tipo de filtro|Tipo de filtro a aplicar. Si se selecciona Fecha de creación o fecha de modificación, traerá todas las compañías que hayan sido creadas o modificadas después de la fecha seleccionada.||
 |Valor a buscar|Valor a buscar en el filtro.|Rocketbot|
+|Cantidad máxima de resultados|Cantidad máxima de resultados. Por defecto trae 100 companías.|100|
 |Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
 ### Obtener contactos por query
-  
+
 Este comando permite obtener contactos por nombre, teléfono o email.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Tipo de filtro|Tipo de filtro a aplicar. ||
 |Valor a buscar|Valor a buscar en el filtro.|example@rocketbot.com|
+|Cantidad máxima de resultados|Cantidad máxima de resultados. Por defecto trae 100 companías.|100|
 |Asignar resultado a variable|Variable a la cual asignar el resultado.|Variable|
 
 ### Crear oportunidad
-  
+
 Este comando permite crear una oportunidad.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |

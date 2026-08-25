@@ -50,7 +50,9 @@ from clientifyObject import ClientifyObject #type:ignore
 global clientify_I
 
 module = GetParams("module")
+CLIENTIFY_API_BASE_URL = "https://api-plus.clientify.com/v2"
 
+CLIENTIFY_RESOURCE_BASE_URL = "https://api-plus.clientify.com/api"
 try:
 
     if module == "connectToClientify":
@@ -139,9 +141,10 @@ try:
         whereToStore = GetParams("whereToStore")
         filter_type = GetParams("filter_type")
         filter_value = GetParams("filter_value")
+        max_results = GetParams("max_results") if GetParams("max_results") else 100
         
         try:
-            result = clientify_I.getCompanies(filter_type, filter_value)
+            result = clientify_I.getCompanies(filter_type, filter_value, max_results=max_results)
             SetVar(whereToStore, result)
         except Exception as e:
             PrintException() #type:ignore
@@ -151,9 +154,10 @@ try:
         filter_type = GetParams("filter_type")
         filter_value = GetParams("filter_value")
         whereToStore = GetParams("whereToStore")
+        max_results = GetParams("max_results")
         
         try:
-            result = clientify_I.getContacts(filter_type, filter_value)
+            result = clientify_I.getContacts(filter_type, filter_value, max_results=max_results)
             SetVar(whereToStore, result)
         except Exception as e:
             PrintException()
@@ -171,8 +175,8 @@ try:
         data = {
             "name" : deal_name,
             "amount" : deal_amount,
-            "contact": f"https://api.clientify.net/v1/contacts/{contact_id}/",
-            "company": f"https://api.clientify.net/v1/companies/{company_id}/",
+            "contact": f"{CLIENTIFY_RESOURCE_BASE_URL}/contacts/{contact_id}/",
+            "company": f"{CLIENTIFY_RESOURCE_BASE_URL}/companies/{company_id}/",
             "expected_closed_date": close_date,
             "products": products,
             "custom_fields": custom_fields
@@ -188,7 +192,8 @@ try:
     
     if module == "getProducts":
         whereToStore = GetParams("whereToStore")
-        resultRead = clientify_I.getProducts()
+        max_results = GetParams("max_results") if GetParams("max_results") else 100
+        resultRead = clientify_I.getProducts(max_results=max_results)
         SetVar(whereToStore, resultRead)
         
     if module == "getCustomFields":
