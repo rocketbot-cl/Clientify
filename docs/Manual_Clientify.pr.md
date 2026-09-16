@@ -3,23 +3,23 @@
 
 
 # Clientify
-  
-Modulo para interagir com Clientify.  
+
+Modulo para interagir com Clientify.
 
 *Read this in other languages: [English](Manual_Clientify.md), [Português](Manual_Clientify.pr.md), [Español](Manual_Clientify.es.md)*
-  
+
 ![banner](imgs/Banner_Clientify.png)
 ## Como instalar este módulo
-  
+
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
-2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
+2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.
 
 
 ## Descrição do comando
 
 ### Conectar a Clientify
-  
+
 Conectar a Clientify
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -28,7 +28,7 @@ Conectar a Clientify
 |Atribuir resultado à variável|Variável para atribuir o resultado. Ele trará um JSON.|Variável|
 
 ### Obter oportunidade com filtros
-  
+
 Obtém oportunidade com filtros
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Obtém oportunidade com filtros
 |Atribuir resultado à variável|Variável à qual atribuir o resultado. Trazerá um JSON.|Variável|
 
 ### Obter oportunidade por ID
-  
+
 Obtém todas as propriedades de uma oportunidade por ID
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -57,32 +57,35 @@ Obtém todas as propriedades de uma oportunidade por ID
 |Só informações dos Deals|Se esta caixa estiver marcada, trará apenas as informações do Deal.|True|
 
 ### Obter produtos
-  
+
 Este comando permite obter todos os produtos do Clientify
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
+|Número máximo de resultados|Número máximo de resultados. Por padrão traz 100 produtos.|100|
 |Atribuir resultado à variável|Variável à qual atribuir o resultado.|Variável|
 
 ### Obter empresas por query
-  
+
 Este comando permite obter empresas por nome, data de criação ou data de modificação
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Tipo de filtro|Tipo de filtro a aplicar. Se for selecionada a Data de criação ou a Data de modificação, trará todas as empresas que tenham sido criadas ou modificadas depois da data selecionada.||
 |Valor a buscar|Valor a buscar no filtro.|Rocketbot|
+|Número máximo de resultados|Número máximo de resultados. Por padrão traz 100 empresas.|100|
 |Atribuir resultado a variável|Variável à qual atribuir o resultado.|Variável|
 
 ### Obter contatos por query
-  
+
 Este comando permite obter contatos por nome, telefone ou email.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Tipo de filtro|Tipo de filtro a aplicar.||
 |Valor a buscar|Valor a buscar no filtro.|example@rocketbot.com|
+|Número máximo de resultados|Número máximo de resultados. Por padrão traz 100 empresas.|100|
 |Atribuir resultado à variável|Variável à qual atribuir o resultado.|Variável|
 
 ### Criar oportunidade
-  
+
 Este comando permite criar uma oportunidade.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
